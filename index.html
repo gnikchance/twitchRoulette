@@ -11,7 +11,7 @@
 
         <input onclick="spin()" type="button" value="spin" id='spin' />
 
-        <h1 style="text-align: center;">Next Spin in <span id="time">10:00</span> Minutes!
+        <h1 style="text-align: center; color: lightskyblue;">Next Spin in <span id="time">10:00</span> Minutes!
             <br>
             <!-- Use <span>!wager color|number amount</span> to place your bet -->
             </span>
@@ -124,8 +124,8 @@
         var canvas = document.getElementById("canvas");
         if (canvas.getContext) {
             var outsideRadius = 200;
-            var textRadius = 160;
-            var insideRadius = 125;
+            var textRadius = 165;
+            var insideRadius = 150;
 
             ctx = canvas.getContext("2d");
             ctx.clearRect(0, 0, 500, 500);
@@ -133,7 +133,7 @@
             ctx.strokeStyle = "WHITE";
             ctx.lineWidth = 7;
 
-            ctx.font = 'bold 12px Helvetica, Arial';
+            ctx.font = 'bold 22px Helvetica, Arial';
 
             for (var i = 0; i < options.length; i++) {
                 var angle = startAngle + i * arc;
@@ -158,7 +158,7 @@
                 // ctx.shadowOffsetY = -1;
                 // ctx.shadowBlur = 0;
                 // ctx.shadowColor = "rgb(220,220,220)";
-                ctx.fillStyle = "pink";
+                ctx.fillStyle = "white";
                 ctx.translate(250 + Math.cos(angle + arc / 2) * textRadius,
                     250 + Math.sin(angle + arc / 2) * textRadius);
                 ctx.rotate(angle + arc / 2 + Math.PI / 2);
