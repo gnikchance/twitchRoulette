@@ -58,15 +58,16 @@
             console.log(timer);
 
             if (--timer < 0) {
-                clearInterval(loop);
+                timer = 0;
+               // clearInterval(loop);
                 //  timer = duration;
             }
 
             if (spinPressed == true) {
                 clearInterval(loop);
                 spinPressed = false;
-                var fiveMinutes = 60 * 10;
-                startTimer(fiveMinutes, display);
+                var time = 60 * 10;
+                startTimer(time, display);
                 //  timer = duration;
             }
         }, 1000);
@@ -221,6 +222,7 @@
         // sendRoulette(text);
 
         //RESTARTS TIMER
+        
         spinPressed = true;
 
     }
