@@ -42,7 +42,9 @@
     }
 
     //CODE FOR COUNTDOWN TIMER
+    var spinPressed;
     function startTimer(duration, display) {
+        clearInterval(loop);
         var timer = duration, minutes, seconds;
         var loop = setInterval(function () {
             minutes = parseInt(timer / 60, 10);
@@ -57,6 +59,14 @@
 
             if (--timer < 0) {
                 clearInterval(loop);
+                //  timer = duration;
+            }
+
+            if (spinPressed == true) {
+                clearInterval(loop);
+                spinPressed = false;
+                var fiveMinutes = 60 * 10;
+                startTimer(fiveMinutes, display);
                 //  timer = duration;
             }
         }, 1000);
@@ -211,9 +221,8 @@
         // sendRoulette(text);
 
         //RESTARTS TIMER
-        var fiveMinutes = 1 * 5,
-            display = document.querySelector('#time');
-        startTimer(fiveMinutes, display);
+        spinPressed = true;
+
     }
 
     function easeOut(t, b, c, d) {
