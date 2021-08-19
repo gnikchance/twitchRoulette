@@ -4,20 +4,28 @@
 
 <body style="background-color: #247345 ;">
     <!-- roulette canvas game -->
+    <input style="z-index: 5;" onclick="spin()" type="button" value="spin" id='spin' />
 
-    <div style="text-align: center;">
+    <div>
 
         <!--button onclick="sendRoulette(15)">click me dare u</button-->
 
-        <input onclick="spin()" type="button" value="spin" id='spin' />
+       
 
-        <h1 style="text-align: center; color: lightskyblue;">Next Spin in <span id="time">10:00</span> Minutes!
+        <h1 style="font-size: 20px;
+        position: absolute;
+        top: 275px;
+        left: 130px;
+        z-index: 1;text-align: center; color: lightskyblue;">Next Spin in <span id="time">10:00</span> Minutes!
             <br>
             <!-- Use <span>!wager color|number amount</span> to place your bet -->
             </span>
         </h1>
 
-        <canvas id="canvas" width="500" height="500"></canvas>
+        <canvas style="position: absolute;
+        top: 100px;
+        left: 0px;
+        z-index: 3;" id="canvas" width="500" height="500"></canvas>
 
     </div>
 
